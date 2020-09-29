@@ -1,0 +1,16 @@
+{
+  "id": "2052563",
+  "name": "党建",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "13333956",
+      "name": "back-line",
+      "font_class": "back-line",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

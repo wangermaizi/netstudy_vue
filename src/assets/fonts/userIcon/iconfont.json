@@ -1,0 +1,44 @@
+{
+  "id": "2037858",
+  "name": "课优邦",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1727435",
+      "name": "211铃铛",
+      "font_class": "lingdang",
+      "unicode": "e8c0",
+      "unicode_decimal": 59584
+    },
+    {
+      "icon_id": "5543849",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "9097244",
+      "name": "书城",
+      "font_class": "shucheng",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "13314428",
+      "name": "绑定",
+      "font_class": "bangding",
+      "unicode": "e6cb",
+      "unicode_decimal": 59083
+    },
+    {
+      "icon_id": "16399015",
+      "name": "退出",
+      "font_class": "tuichu",
+      "unicode": "e85f",
+      "unicode_decimal": 59487
+    }
+  ]
+}
