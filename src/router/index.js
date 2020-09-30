@@ -13,9 +13,14 @@ const routes = [
 		name: "course",
 		component: () => import("@/views/course/index")
 	},
+	{
+		path:"/course/list",
+		name: "courseList",
+		component: () => import("@/views/course/courseList")
+	},
 	// 课程详情
 	{
-		path: "/course/courseInfo",
+		path: "/course/couinfo/:courseId",
 		name: "courseInfo",
 		component: () => import("@/views/course/courseInfo")
 	},
@@ -51,7 +56,16 @@ const routes = [
 		name: "files",
 		component: ()=> import("@/views/files/index.vue")
 	},
-
+	{
+		path: "/files/list",
+		name: "filesList",
+		component: () => import("@/views/files/filesList")
+	},
+	{
+		path: "/files/list/:fileId",
+		name: "fileInfo",
+		component: () => import("@/views/files/filesInfo")
+	},
 	/*  **************************************************************** */
 
 	// 考试主页面
@@ -80,6 +94,12 @@ const routes = [
 		path: "/teacher",
 		name: "teacher",
 		component: () => import("@/views/user/teacher.vue")
+	},
+	// 我的-收藏
+	{
+		path: "/collect",
+		name: "collect",
+		component: () => import("@/views/user/collect.vue")
 	},
 	/* 补抓报错页面 */
 	{

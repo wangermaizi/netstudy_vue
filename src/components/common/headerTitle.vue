@@ -1,16 +1,16 @@
 <template>
-  <h2 class="tac">
-	  <img :src="title.img" :alt="title.title">
-	  <span class="c-333">{{title.title}}</span>
-  </h2>
+	<div class="tac">
+		  <img :src="img" :alt="title">
+		  <div class="c-333">{{title}}</div>
+	</div>
 </template>
 
 <script>
 	export default {
 		name: "headerTitle",
-		props: ["title"],
+		props: ["title", "img"],
 		mounted() {
-			console.log(this.title.img)
+			// console.log(this.title.img)
 		}
 	}
 </script>
@@ -28,9 +28,15 @@
 			display: inline-block;
 			position: relative;
 		}
-		span.c-333 {
+		.c-333 {
+			flex: 1;
+			display: block;
+			width: 120px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 			color: #333;
-			font-size: 18px;
+			font-size: 14px;
 		}
 
 	}

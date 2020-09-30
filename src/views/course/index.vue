@@ -16,7 +16,7 @@
 				<!-- 课程 -->
 				<div class="pb10">
 					<div class="course-title">
-						<header-title :title="courseTitleObj"></header-title>
+						<header-title :title="courseTitleObj.title" :img="courseTitleObj.img"></header-title>
 						<input-tpl @searchEvent="searchCourseEvent"></input-tpl>
 					</div>
 					<div class="filter">
@@ -47,15 +47,15 @@
 							<course-card-item v-for="(item, index) of courseList" :courseItem="item" :key="index+'wang'" />
 						</div>
 						<section class="tac pt10">
-							<more-change-btn ></more-change-btn>
+							<more-change-btn :moreTitle="moreAndChange.moreTitle" :moreIcon="moreAndChange.moreIcon" :moreRouter="moreAndChange.moreRouter" @change="changeCourse"></more-change-btn>
 						</section>
 					</div>
 				</div>
 
 				<!-- 网校名师 -->
 				<div class="pb20">
-					<div class="course-title">
-						<header-title :title="teacherTitleObj"></header-title>
+					<div class="course-title teacher-title-content">
+						<header-title :title="teacherTitleObj.title" :img="teacherTitleObj.img"></header-title>
 						<input-tpl @searchEvent="searchTeacherEvent"></input-tpl>
 					</div>
 					<div class="teacher-content">
@@ -72,7 +72,7 @@
 			<div class="news">
 				<section class="container">
 					<div class="course-title news-list">
-						<header-title :title="newsTitleObj"></header-title>
+						<header-title :title="newsTitleObj.title" :img="newsTitleObj.img"></header-title>
 						<div class="tac c-000 more-news">
 							<router-link to="/course/newsList">
 								<span class="more-news"> 更多资讯 </span>
@@ -87,7 +87,7 @@
 			</div>
 		</div>
 		<div class="blank"></div>
-		<tab-bar />
+		<tab-bar title="课程"/>
 	</div>
 </template>
 
@@ -104,8 +104,6 @@
 	import NewsListItem from "@/components/course/newsListItem";
 
 	// import service from "@/utils/api/service";
-
-
 
 	export default {
     	name: "index",
@@ -124,6 +122,11 @@
 		data() {
 			return {
 				greet: "hello world",
+				moreAndChange: {
+					moreTitle: "更多课程",
+					moreIcon: "fa fa-play-circle-o",
+					moreRouter: "/course/list"
+				},
 				swipeList: [{
 					background:"red",
 					url:"/",
@@ -215,47 +218,47 @@
 				],
 				courseList:[
 					{
-						imgUrl: require("@/assets/images/course/test_course.jpg"),
-						name: "零基础入门python",
+						logo: require("@/assets/images/course/test_course.jpg"),
+						courseName: "零基础入门python",
 						teach: {
 							name: "李嘉图",
 							edu: "华北电力大学"
 						},
-						studyCount: 122,
-						commentCount: 155,
+						pageViewcount: 122,
+						commentCounts: 155,
 						courseId:10,
 						tip: "精品课程"
 					}, {
-						imgUrl: require("@/assets/images/course/test_course.jpg"),
-						name: "零基础入门python",
+						logo: require("@/assets/images/course/test_course.jpg"),
+						courseName: "零基础入门python",
 						teach: {
 							name: "李嘉图",
 							edu: "华北电力大学"
 						},
-						studyCount: 122,
-						commentCount: 155,
+						pageViewcount: 122,
+						commentCounts: 155,
 						courseId:10,
 						tip: "精品课程"
 					}, {
-						imgUrl: require("@/assets/images/course/test_course.jpg"),
-						name: "零基础入门python",
+						logo: require("@/assets/images/course/test_course.jpg"),
+						courseName: "零基础入门python",
 						teach: {
 							name: "李嘉图",
 							edu: "华北电力大学"
 						},
-						studyCount: 122,
-						commentCount: 155,
+						pageViewcount: 122,
+						commentCounts: 155,
 						courseId:10,
 						tip: "精品课程"
 					}, {
-						imgUrl: require("@/assets/images/course/test_course.jpg"),
-						name: "零基础入门python",
+						logo: require("@/assets/images/course/test_course.jpg"),
+						courseName: "零基础入门python",
 						teach: {
 							name: "李嘉图",
 							edu: "华北电力大学"
 						},
-						studyCount: 122,
-						commentCount: 155,
+						pageViewcount: 122,
+						commentCounts: 155,
 						courseId:10,
 						tip: "精品课程"
 					}
@@ -313,6 +316,10 @@
 			/* 搜索讲师 */
 			searchTeacherEvent(value) {
 				console.log(value)
+			},
+			/* 触发换一换 */
+			changeCourse() {
+				console.log("触发换一换")
 			}
 		},
 		created(){
@@ -381,6 +388,10 @@
 	.teacher-content {
 		margin-top: 20px;
 		margin-bottom: 10px;
+		border-top: 1px solid #ccc;
+	}
+	.teacher-title-content {
+		padding-bottom: 10px;
 	}
 	@media (max-width: 768px) and (min-width: 320px) {
 		.container {
@@ -422,5 +433,14 @@
 		text-align: center;
 		border: 1px solid #ea562e;
 		color: #ea562e;
+	}
+	/deep/ .teacher-list {
+
+		justify-content: space-between;
+	}
+	/deep/ .i-teach-wrap {
+		width: 42%;
+		border: 1px solid #418bca;
+		background-color: #fff;
 	}
 </style>

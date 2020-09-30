@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="teacher-info">
 		<nav-bar :text="navObj.text" :router="navObj.router" />
 		<div class="blank"></div>
 		<div class="teacher-content">
@@ -35,6 +35,7 @@
 						</div>
 					</section>
 				</div>
+				<div class="clear"></div>
 				<section class="mt30">
 					<div>
 						<header class="comm-title all-teacher-title c-course-content">
@@ -53,19 +54,7 @@
 						<article class="comm-course-list">
 							<ul class="of">
 								<li v-for="(item, index) of courseList" :key="index+ 'wang'">
-									<div class="cc-l-wrap">
-										<section class="course-img">
-											<img v-lazy="item.logo" class="img-responsive" alt="">
-											<div class="cc-mask">
-												<router-link :to="'/course/couinfo/'+item.courseId" title="开始学习" class="comm-btn c-btn-1">开始学习</router-link>
-											</div>
-										</section>
-										<h3 class="hLh30 txtOf mt10">
-											<router-link :to="'/course/couinfo/'+item.courseId" :title="item.courseName" class="course-title fsize18 c-333">
-												{{item.courseName}}
-											</router-link>
-										</h3>
-									</div>
+									<course-card-item :courseItem="item" />
 								</li>
 							</ul>
 							<div class="clear"></div>
@@ -80,12 +69,15 @@
 
 <script>
 	import Nav from "@/components/common/nav";
+	import CourseCardItem from "@/components/common/courseCardItem";
+
 
 	/* 讲师详情 */
   	export default {
     	name: "teacherInfo",
 		components: {
-    		"nav-bar": Nav
+    		"nav-bar": Nav,
+			"course-card-item": CourseCardItem
 		},
 		data() {
 			return {
@@ -100,7 +92,7 @@
 					education: "北京师范大学法学院副教授",
 					career: "北京师范大学法学院副教授、清华大学法学博士。自2004年至今已有9年的司法考试培训经验。长期从事司法考试辅导，深知命题规律，了解解题技巧。内容把握准确，授课重点明确，层次分明，调理清晰，将法条法理与案例有机融合，强调综合，深入浅出。",
 					isStar: "1",
-					picPath: "https://localhost/images/upload/teacher/20150915/1442297885942.jpg"
+					picPath: "http://localhost/images/upload/teacher/20150915/1442297885942.jpg"
 				},
 				courseList: [
 					{
@@ -163,6 +155,9 @@
 </script>
 
 <style lang="less" scoped>
+	.teacher-info {
+		background-color: #fafafa;
+	}
 	.blank {
 		height: 49px;
 		width: 100%;
@@ -170,7 +165,7 @@
 	.comm-title {
 		overflow: hidden;
 		clear: both;
-		margin: 20px 0 15px;
+		margin: 10px 0 10px;
 		h2 span {
 			font-size: 17px;
 		}
@@ -188,6 +183,7 @@
 				float: left;
 				width: 37%;
 				margin: 0 18px 0 0;
+				background-color: #fff;
 				img {
 					margin: 20px auto;
 					width: 90%;
@@ -223,16 +219,25 @@
 	}
 	.comm-title.all-article-title, .comm-title.all-teacher-title {
 		overflow: visible;
+
+	}
+	.comm-course-list {
+		border-top: 1px solid #e2e2e2;
 	}
 	.comm-course-list ul {
 		margin: 0 5px;
+		padding: 10px 0;
 	}
 	.comm-course-list li, .i-teacher-list ul li {
 		width: 50%;
 	}
 	.comm-title {
 		clear: both;
-		margin: 20px 0 15px;
+		padding: 0 14px;
+		span {
+			font-size: 16px;
+			color: #3399FF;
+		}
 	}
 
 	.all-teacher-title .c-tab-title {
@@ -242,5 +247,11 @@
 	.comm-course-list .of li .cc-l-wrap {
 		 background-color: #fff;
 		 border-radius: 5px;
-	 }
+	}
+	/* 重写主讲课程样式 */
+	/deep/ .course-item {
+		width: 88%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 </style>

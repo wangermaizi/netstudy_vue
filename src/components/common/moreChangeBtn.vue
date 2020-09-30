@@ -2,14 +2,14 @@
 	<div class="bottomContainerNew">
 		<div class="box">
 			<div class="goToChannel more">
-				<a href="javascript:void(0)" id="more_courinfo" title="全部课程">
-					<i class="fa fa-play-circle-o"></i>
-					更多课程
-				</a>
+				<router-link :to="moreRouter" id="more_courinfo" title="全部课程">
+					<i v-if="moreIcon" :class="moreIcon"></i>
+					{{moreTitle}}
+				</router-link>
 			</div>
 		</div>
 		<div class="box">
-			<div class="goToChannel change">
+			<div class="goToChannel change" @click="changeEvent">
 				<a href="javascript:void(0)" title="换一换" id="changeRandom">
 					<i class="fa fa-refresh"></i>
 					换一换
@@ -22,10 +22,27 @@
 <script>
   	export default {
     	name: "moreChangeBtn",
-		props: [""],
+		props: {
+    		"moreTitle": {
+    			type: String,
+				required: true
+			},
+			"moreIcon": {
+    			type: String
+			},
+			"moreRouter": {
+    			type: String,
+				required: true
+			}
+		},
+		data() {
+			return {
+				key: ""
+			}
+		},
 		methods: {
-			name() {
-
+			changeEvent() {
+				this.$emit("change")
 			}
 		},
   	}

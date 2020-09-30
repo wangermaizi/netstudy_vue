@@ -15,6 +15,7 @@ import 'amfe-flexible'
 // 通过cdn 引入 vue-lazyload
 Vue.use(VueLazyload, {
 	preLoad: 1.3, // 预加载位置
+	error: require("@/assets/images/default-img.gif"),  //  加载错误也是显示加载图, 没有错误图显示
 	loading: require("@/assets/images/default-img.gif"),  // 默认加载图
 	attempt: 1
 });
@@ -23,10 +24,6 @@ Vue.use(VueLazyload, {
 Vue.prototype.API = API;
 
 Vue.config.productionTip = false;
-
-// 引入echarts
-import echarts from 'echarts'
-Vue.prototype.$echarts = echarts
 
 new Vue({
   router,

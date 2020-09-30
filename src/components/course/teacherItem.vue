@@ -56,11 +56,15 @@
 	}
 	.i-teach-wrap {
 		width: 44%;
-		padding: 0;
+		padding: 8px;
 		margin-bottom: 0;
 		/* margin-left: 25px; */
 		border-radius: 10px;
+
 		background-color: transparent;
+		.teacher-name a {
+			color: #3399FF;
+		}
 		.i-teach-pic {
 			width: 60%;
 			margin: 5px auto 0;

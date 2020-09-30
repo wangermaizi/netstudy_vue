@@ -6,7 +6,7 @@
             </div>
             <div class="center-text" :class=CenterClass >{{text}}</div>
             <div class="right">
-                <i :class=RightClass v-on:click="icon2"></i>
+                <i :class="[currentRightClass,{active: isActive}]" @click="icon2"></i>
             </div>
         </div>
     </div>
@@ -22,14 +22,21 @@ export default {
 		},//左的图标，使用class，图标类
 		CenterClass:String,//居中的类,当类里的样式在当前页面存在时，传进来的类会无作用，里面的类优先级高一些
         RightClass:String,//右的图标，使用class，图标类
+		activeRightClass: String, // 图标处于激活状态时的样式
         router:String,//左边点击时跳转的路由，默认为my
     },
+	data() {
+		return {
+			isActive: false,
+			currentRightClass: "",
+		}
+	},
     mounted(){
-        this.data = this.text;
-        this.data = this.LeftClass;
-		this.data = this.CenterClass;
-        this.data = this.RightClass;
-
+        // this.data = this.text;
+        // this.data = this.LeftClass;
+		// this.data = this.CenterClass;
+        // this.data = this.RightClass;
+		this.currentRightClass = this.RightClass ? this.RightClass : ""
     },
     methods:{
 		// left路由跳转
@@ -44,10 +51,21 @@ export default {
         },
 		// right点击的时候执行的事件
         icon2(){
+			console.log(1000);
             if(!this.RightClass){
-                console.log('xx')
+                console.log('no right part eventListening')
             }else{
-                this.$emit('icon2');
+            	console.log(1001);
+				if (this.isActive && this.activeRightClass) {
+					this.isActive = !this.isActive;
+					this.currentRightClass = this.RightClass
+					console.log()
+				} else if (!this.isActive && this.activeRightClass) {
+					console.log(1111);
+					this.isActive = !this.isActive;
+					this.currentRightClass = this.activeRightClass
+				}
+            	this.$emit('change');
             }
         }
     }

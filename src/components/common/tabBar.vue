@@ -17,7 +17,10 @@
 	export default {
 		name: "tabBar",
 		props:{
-		    title:'',//点击的当前页面
+		    title:{
+		    	type: String,
+				required: true
+			},//点击的当前页面
 		},
 		data() {
 			return {
@@ -34,7 +37,8 @@
 				}, {
 					label: '我的',
 					icon: 'fa fa-user'
-				}]
+				}],
+				data: ""
 			}
 		},
 		mounted(){
@@ -42,23 +46,28 @@
 		},
 		methods: {
 			// 跳转到其他页面
-
 			btnroute(value){
 				const that = this;
-				console.log(value)
-				switch(value) {
-				    case '课程':
-				        that.$router.push('/course')
-				        break;
-				    case '文档':
-				        that.$router.push('/files')
-				        break;
-				    case '考试':
-						that.$router.push('/exam')
-						break;
-					case '我的':
-						that.$router.push('/uc/index')
-						break;
+				console.log(value);
+				if (!this.title) {
+					throw "title of props must require"
+				}
+				// this.$route
+				if(value !== this.title){
+					switch(value) {
+						case '课程':
+							that.$router.push('/course');
+							break;
+						case '文档':
+							that.$router.push('/files');
+							break;
+						case '考试':
+							that.$router.push('/exam');
+							break;
+						case '我的':
+							that.$router.push('/uc/index');
+							break;
+					}
 				}
 			}
 		},
@@ -70,12 +79,13 @@
 		width: 100%;
 		height: 49px;
 		display: flex;
-		padding: 7px 0px;
+		padding: 7px 0;
 		position: fixed;
-		bottom: 0px;
+		bottom: 0;
 		z-index: 20;
 		box-sizing: border-box;
 		background-color: #fff;
+		box-shadow: 0 1px 6px #c0c0c0;
 		.box-1{
 			flex: 1;
 			height: 35px;
