@@ -6,7 +6,7 @@
 		<div class="blank"></div>
 		<div class="file-content">
 			<!-- 树形结构图 -->
-			<div>
+			<div id="body">
 				<div class="title">
 					<div class="title-content">
 						<i class="fa fa-bookmark" aria-hidden="true"></i>
@@ -14,10 +14,11 @@
 					</div>
 				</div>
 				<div id="menu">
-					<div class="navBox">
-						<slide v-for="(item, index) of fileData.parentKpointList" v-if="item.kpointType !== 2 && item.kpointType !== 3" sort-type="file" :chapter-data="item" :key="index+'abc'">
-
-						</slide>
+					<div id="open">
+						<div class="navBox">
+							<slide v-for="(item, index) of fileData.parentKpointList" v-if="item.kpointType !== 2 && item.kpointType !== 3" sort-type="file" :chapter-data="item" :key="index+'abc'">
+							</slide>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -427,6 +428,30 @@
 	body {
 		height: 100vh;
 
+	}
+	#body > .title {
+		margin: 21px auto 11px;
+		padding: 0 14px;
+		font-size: 18px;
+		text-align: left;
+		.title-content i {
+			color: #3399ff;
+			padding-right: 8px;
+		}
+	}
+	#open {
+		/* width: 2.6rem; */
+		width: 100%;
+		height: 100%;
+		/* background-color: #363a45; */
+		padding-bottom: 4px;
+		padding-left: 16px;
+		box-sizing: border-box;
+		-webkit-transition: all 0.8s ease;
+		-moz-transition: all 0.8s ease;
+		-o-transition: all 0.8s ease;
+		-ms-transition: all 0.8s ease;
+		color: #101010;
 	}
 
 	.blank {

@@ -23,11 +23,14 @@ service.interceptors.request.use(
 			// config.data = JSON.parse(config.data)
 		}
 		// console.log(config);
+		// 加载进度条
+		NProgress.start();
 		return config;
 	},
 	(error) => {
 		// Do something with request error
 		console.error("error:", error); // for debug
+		NProgress.done();
 		return Promise.reject(error);
 	}
 );
@@ -35,9 +38,11 @@ service.interceptors.request.use(
 // respone拦截器 axios的一些配置 (相应拦截器配置)
 service.interceptors.response.use(
 	(response) => {
+		NProgress.done();
 		return response;
 	},
 	(error) => {
+		NProgress.done();
 		console.error("error:" + error); // for debug
 		// 相应错误统一触发, 网络请求错误
 		return Promise.reject(error);

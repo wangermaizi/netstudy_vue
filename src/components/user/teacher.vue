@@ -83,9 +83,9 @@
 				switchOpen:'student',
 				userinfo:{},
 				regionFunction:[
-					{'id':'0','icon':require('@/assets/img/user-img/zuoyeshangchuang.png'),'text':'发布作业'},
-					{'id':'1','icon':require('@/assets/img/user-img/zuoyedafen.png'),'text':'批改作业'},
-					{'id':'2','icon':require('@/assets/img/user-img/zuoyetongji.png'),'text':'作业统计'},
+					{'id':'0','icon':require('@/assets/images/user/zuoyeshangchuang.png'),'text':'发布作业'},
+					{'id':'1','icon':require('@/assets/images/user/zuoyedafen.png'),'text':'批改作业'},
+					{'id':'2','icon':require('@/assets/images/user/zuoyetongji.png'),'text':'作业统计'},
 				],
 				regionSetUp:[
 					{leftIcon:'icon icon-bangding',text:'微信绑定',rightIcon:'fa fa-angle-right'},

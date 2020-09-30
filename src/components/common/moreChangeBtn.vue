@@ -28,7 +28,8 @@
 				required: true
 			},
 			"moreIcon": {
-    			type: String
+    			type: String,
+				default: "fa fa-play-circle-o"
 			},
 			"moreRouter": {
     			type: String,

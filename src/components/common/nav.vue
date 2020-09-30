@@ -17,7 +17,7 @@ export default {
     props:{
         text:String,//居中的标题
         LeftClass:{
-        	type: String,
+        	type: String, 
 			default: "fa fa-angle-left"
 		},//左的图标，使用class，图标类
 		CenterClass:String,//居中的类,当类里的样式在当前页面存在时，传进来的类会无作用，里面的类优先级高一些

@@ -22,6 +22,7 @@
 
 <style lang="less" scoped>
 	.card-list-item {
+		flex-shrink: 1;
 		width: 146px;
 		height: 87px;
 		display: flex;
@@ -34,6 +35,8 @@
 		border-radius: 5px;
 		margin-left: 0.4rem;
 		overflow-y: hidden;
+		float: left;
+		white-space: nowrap;
 		h3 {
 			padding: 0.03rem 0;
 			font-size: 13px;
@@ -65,6 +68,7 @@
 			color: #2c879b;
 		}
 	}
+
 	.card-list-item.active {
 		background: #fff;
 		border: 1px solid #00CC99;

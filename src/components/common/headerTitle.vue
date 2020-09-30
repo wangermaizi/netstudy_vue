@@ -36,7 +36,8 @@
 			text-overflow: ellipsis;
 			white-space: nowrap;
 			color: #333;
-			font-size: 14px;
+			font-size: 18px;
+			margin-left: 6px;
 		}
 
 	}

@@ -92,10 +92,13 @@
 		background-color: #fff;
 		padding: 0;
 		z-index: 2;
-		box-shadow: none;
+		/*box-shadow: none;*/
+		box-shadow: 0 2px 3px rgba(7,0,2,.04);
 		position: fixed;
 		left: 0;
 		top: 0;
+
+		/*border-bottom: 1px solid #ccc;*/
 		.container {
 			display: flex;
 			justify-content: space-between;

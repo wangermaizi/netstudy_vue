@@ -1,0 +1,112 @@
+// 可以横向滑动,带删除按钮的样式,复用类
+.swiper-box {
+	width: 100%;
+	background-color: #fff;
+	.swiper-box-box {
+		width: 375px;
+		overflow: hidden;
+		overflow-x: scroll;
+		box-sizing: border-box;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		.swiper-ul {
+			width: 465px;
+			display: flex;
+			height: 100px;
+			box-sizing: border-box;
+			.swiper-li-title {
+				width: 355px;
+				margin: 0px 10px;
+				border-bottom: 1px solid #f2f2f2;
+				display: flex;
+				height: 100px;
+				box-sizing: border-box;
+				padding: 15px 0px;
+				.swiper-li-img {
+					width: 116px;
+					height: 70px;
+					border-radius: 4px;
+					overflow: hidden;
+					img {
+						width: 116px;
+						height: 70px;
+						border-radius: 4px;
+					}
+					i {
+						width: 25px;
+						height: 25px;
+						color: #fff;
+						position: relative;
+						top: -50px;
+					}
+				}
+				.swiper-li-text {
+					flex: 1;
+					margin-left: 10px;
+					height: 70px;
+					box-sizing: border-box;
+					.li-text-title {
+						width: 200px;
+						height: 21px;
+						font-size: 16px;
+						font-weight: 400;
+						text-align: left;
+						line-height: 21px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
+					.li-text-category {
+						width: 100%;
+						height: 14px;
+						font-size: 12px;
+						font-weight: 400;
+						text-align: left;
+						line-height: 28px;
+					}
+					.li-text-state {
+						width: 100%;
+						height: 42px;
+						display: flex;
+						.li-text-state-price {
+							flex: 1;
+							font-size: 18px;
+							font-weight: 400;
+							text-align: left;
+							color: #d64949;
+							margin-top: 17px;
+						}
+						.li-text-state-button {
+							width: 104px;
+							height: 35px;
+							background: #3399ff;
+							border: 1px solid #3399ff;
+							border-radius: 18px;
+							font-size: 14px;
+							font-weight: 400;
+							text-align: center;
+							color: #ffffff;
+							line-height: 35px;
+						}
+						.li-text-state-button2 {
+							background: #fff;
+							border: 1px solid #d64949;
+							color: #d64949;
+						}
+					}
+				}
+			}
+			.swiper-li-del {
+				width: 90px;
+				height: 100px;
+				line-height: 100px;
+				background: #ff3b30;
+				font-size: 17px;
+				font-weight: 400;
+				text-align: center;
+				color: #ffffff;
+			}
+		}
+	}
+}

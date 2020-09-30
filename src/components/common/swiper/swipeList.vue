@@ -37,8 +37,7 @@
 			});
 
 			// 需要开启底部分页
-
-			console.log(this.dataList)
+			// console.log(this.dataList)
 		}
 	}
 </script>

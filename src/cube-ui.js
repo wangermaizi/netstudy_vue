@@ -7,7 +7,7 @@ import {
   	Toast,
   	Popup,
 	ScrollNav,
-	ScrollNavBar
+	ScrollNavBar,
 } from 'cube-ui'
 
 let arr = [Style, Button, Dialog, TabBar, Toast, Popup, ScrollNav, ScrollNavBar];

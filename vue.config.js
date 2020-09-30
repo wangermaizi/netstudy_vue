@@ -33,7 +33,15 @@ module.exports = {
         pathRewrite: {
           '/wbr': ''
         }
-      }
+      },
+	  '/ljy': {
+	      target: 'http://192.168.1.3:80',
+	      changeOrigin: true,
+	      ws: true,
+	      pathRewrite: {
+	          '^/ljy': ''
+	      }
+	  },
     }
   },
   configureWebpack: {

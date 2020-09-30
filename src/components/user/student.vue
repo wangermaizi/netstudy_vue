@@ -29,7 +29,7 @@
 			</div>
 			<div class="region-label">
 				<div class="label-1">
-					<div class="label-1-title">收藏</div>
+					<div class="label-1-title" @click="$router.push({ path: '/collect' })">收藏</div>
 					<div class="label-1-number">{{userinfo.collect}}</div>
 				</div>
 				<div class="label-1">
@@ -93,13 +93,13 @@
 				switchOpen:'student',
 				userinfo:{},
 				regionFunction:[
-					{'id':'0','icon':require('@/assets/img/user-img/lianxicuoti.png'),'text':'练习错题'},
-					{'id':'1','icon':require('@/assets/img/user-img/kaoshijilu.png'),'text':'考试记录'},
-					{'id':'2','icon':require('@/assets/img/user-img/xuexijilu.png'),'text':'学习记录'},
-					{'id':'3','icon':require('@/assets/img/user-img/wodedingdang.png'),'text':'我的订单'},
-					{'id':'4','icon':require('@/assets/img/user-img/kechenwenda.png'),'text':'课程问答'},
-					{'id':'5','icon':require('@/assets/img/user-img/xuexibiji.png'),'text':'学习笔记'},
-					{'id':'6','icon':require('@/assets/img/user-img/wodexouye.png'),'text':'我的作业'},
+					{'id':'0','icon':require('@/assets/images/user/lianxicuoti.png'),'text':'练习错题'},
+					{'id':'1','icon':require('@/assets/images/user/kaoshijilu.png'),'text':'考试记录'},
+					{'id':'2','icon':require('@/assets/images/user/xuexijilu.png'),'text':'学习记录'},
+					{'id':'3','icon':require('@/assets/images/user/wodedingdang.png'),'text':'我的订单'},
+					{'id':'4','icon':require('@/assets/images/user/kechenwenda.png'),'text':'课程问答'},
+					{'id':'5','icon':require('@/assets/images/user/xuexibiji.png'),'text':'学习笔记'},
+					{'id':'6','icon':require('@/assets/images/user/wodexouye.png'),'text':'我的作业'},
 				],
 				regionSetUp:[
 					{leftIcon:'icon icon-shucheng',text:'学时与学分',rightIcon:'fa fa-angle-right'},

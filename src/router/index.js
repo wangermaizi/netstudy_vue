@@ -101,6 +101,18 @@ const routes = [
 		name: "collect",
 		component: () => import("@/views/user/collect.vue")
 	},
+	// 我的-浏览
+	{
+		path: "/browse",
+		name: "browse",
+		component: () => import("@/views/user/browse.vue")
+	},
+	// 我的-设置
+	{
+		path: "/install",
+		name: "install",
+		component: () => import("@/views/user/install.vue")
+	},
 	/* 补抓报错页面 */
 	{
 		path: '*',
@@ -115,8 +127,12 @@ const router = new VueRouter({
 });
 
 
-// router.beforeEach((to, from, next) => {
-
-// })
+router.beforeEach((to, from, next) => {
+	NProgress.start();
+	next()
+});
+router.afterEach(()=> {
+	NProgress.done()
+});
 
 export default router

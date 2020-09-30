@@ -7,9 +7,9 @@
 	</div>
 </template>
 <script>
-	import User from '@/components/user/user.vue'
-	import Teacher from '@/components/user/teacher.vue'
-	import Student from '@/components/user/student.vue'
+	import User from '@/components/user/user.vue';
+	import Teacher from '@/components/user/teacher.vue';
+	import Student from '@/components/user/student.vue';
 	export default {
 		components: {
 			User,
@@ -17,8 +17,8 @@
 			Student
 		},
 		data() {
-			return { 
-				isLogin:'3',//0:未登录，1：学生登录，2：教师登录时的学生界面，3：教师登录时的教师页面
+			return {
+				isLogin:'1',//0:未登录，1：学生登录，2：教师登录时的学生界面，3：教师登录时的教师页面
 			}
 		},
 		mounted() {

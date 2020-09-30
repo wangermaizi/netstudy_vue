@@ -11,9 +11,10 @@
     <script src="<%= BASE_URL %>config.js"></script>
 	<link rel="stylesheet" href="<%= BASE_URL %>/css/reset.css" type="text/css">
 	<link rel="stylesheet" href="<%= BASE_URL %>/css/global.css" type="text/css">
+	<link href="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" type="text/css">
 	<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.5/css/swiper.min.css" type="text/css" rel="stylesheet">
-  	<style>
+	<style>
 		@media (min-width: 320px) and (max-width: 768px) {
 			.container {
 				width: auto;
@@ -30,6 +31,26 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+	<script src="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+	<script type="text/javascript" >
+		NProgress.start();
+		window.onload = function() {
+			NProgress.done();
+			document.onreadystatechange = function(){
+				NProgress.start();
+				console.log(document.readyState);
+				if(document.readyState === "Uninitialized"){
+					NProgress.set(1);
+				}
+				if(document.readyState === "Interactive"){
+					NProgress.set(0.5);
+				}
+				if(document.readyState === "complete"){
+					NProgress.done();
+				}
+			}
+		}
+	</script>
     <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/vuex/3.2.0/vuex.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>

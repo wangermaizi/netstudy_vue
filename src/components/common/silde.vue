@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2 class="obtain">
+		<h2 class="obtain" ref="chapterTitle" @click="toggleChapterTitle">
 			<span>
 				<i class="fa fa-circle arrowRot" aria-hidden="true"></i>
 				{{chapterData.name}}
@@ -53,6 +53,15 @@
 				docList: []
 			}
 		},
+		methods: {
+			toggleChapterTitle() {
+				// console.log();
+				let chapterTitleEL = this.$refs.chapterTitle;
+				let className = chapterTitleEL.className;
+				className = className === "obtain"? "obFocus" : "obtain";
+				chapterTitleEL.className = className
+			}
+		},
 	}
 </script>
 
@@ -74,12 +83,19 @@
 		-o-transition: all 0.6s ease;
 		-ms-transition: all 0.6s ease;
 		span {
-			font-size: 18px;
+			font-size: 17px;
 			display: inline-block;
 			max-width: 90%;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
+			i {
+				color: #3399ff;
+				font-size: 10px;
+				position: relative;
+				/* line-height: 0.45rem; */
+				top: -2px;
+			}
 		}
 		> i {
 			position: absolute;
@@ -92,7 +108,7 @@
 	}
 	.secondary {
 		overflow: hidden;
-		height: 0;
+		height: auto;
 		-webkit-transition: all 0.6s ease;
 		-moz-transition: all 0.6s ease;
 		-o-transition: all 0.6s ease;
@@ -125,4 +141,8 @@
 	.obtain + .secondary {
 		height: 0;
 	}
+	.obFocus > i {
+		transform: rotateZ(90deg);
+	}
+
 </style>

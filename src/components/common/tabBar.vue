@@ -48,7 +48,7 @@
 			// 跳转到其他页面
 			btnroute(value){
 				const that = this;
-				console.log(value);
+				// console.log(value);
 				if (!this.title) {
 					throw "title of props must require"
 				}
@@ -97,13 +97,13 @@
 					display: block;
 					height: 22px;
 					line-height: 22px;
-					font-size: 18px;
+					font-size: 20px;
 				}
 			}
 			.box-1-bottom{
 				width: 100%;
 				height: 13px;
-				font-size: 12px;
+				font-size: 16px;
 			}
 		}
 		.box-2{
@@ -117,14 +117,16 @@
 					display: block;
 					height: 22px;
 					line-height: 22px;
-					font-size: 18px;
+					position: relative;
+					top: -2px;
+					font-size: 20px;
 					color: #1890ff;
 				}
 			}
 			.box-1-bottom{
 				width: 100%;
 				height: 13px;
-				font-size: 12px;
+				font-size: 16px;
 				color: #1890ff;
 			}
 		}
